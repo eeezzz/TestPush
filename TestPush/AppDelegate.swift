@@ -18,17 +18,20 @@ import FirebaseMessaging
 // ,UNUserNotificationCenterDelegate, MessagingDelegate
 class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterDelegate, MessagingDelegate {
     
+    // 只有首次安裝才會出現, 用於firebase Colud Messaging
     func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
         print("fcmToken: \(fcmToken)")
     }
     
+    // device Token的取得
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         print("deviceToken: \(deviceToken)")
         let token = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
         print("Device Token:", token)
-        //Messaging.messaging().apnsToken = deviceToken
+        Messaging.messaging().apnsToken = deviceToken
     }
     
+    // 向遠端APNS註冊失敗的事件
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
         print("Failed to register:", error)
     }
@@ -59,6 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
             // For iOS 10 data message (sent via FCM）
             Messaging.messaging().delegate = self
         } else {
+            // push 通知的格式
             let settings: UIUserNotificationSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
             application.registerUserNotificationSettings(settings)
             
@@ -66,7 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
         application.registerForRemoteNotifications()
         FirebaseApp.configure()
         
-        ）return true
+        return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -92,13 +96,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
     }
     
     
-
+    /*
     func registerForPushNotifications(application: UIApplication) {
         let notificationSettings = UIUserNotificationSettings(
             types: [.badge, .sound, .alert], categories: nil)
         application.registerUserNotificationSettings(notificationSettings)
     }
-    
+    */
 
     // The callback to handle data message received via FCM for devices running iOS 10 or above.
     func application(received remoteMessage: MessagingRemoteMessage) {
