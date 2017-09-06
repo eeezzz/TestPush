@@ -13,7 +13,7 @@
 		EF2462221F5E643B00092691 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF2462201F5E643B00092691 /* Main.storyboard */; };
 		EF2462241F5E643B00092691 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF2462231F5E643B00092691 /* Assets.xcassets */; };
 		EF2462271F5E643B00092691 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF2462251F5E643B00092691 /* LaunchScreen.storyboard */; };
-		EFAA627B1F5EA6510098F38E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFAA627A1F5EA6510098F38E /* GoogleService-Info.plist */; };
+		EFAA627D1F5EB0BE0098F38E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFAA627C1F5EB0BE0098F38E /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +28,7 @@
 		EF2462261F5E643B00092691 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF2462281F5E643B00092691 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF24622E1F5E646500092691 /* TestPush.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TestPush.entitlements; sourceTree = "<group>"; };
-		EFAA627A1F5EA6510098F38E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		EFAA627C1F5EB0BE0098F38E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +81,7 @@
 		EF24621B1F5E643B00092691 /* TestPush */ = {
 			isa = PBXGroup;
 			children = (
-				EFAA627A1F5EA6510098F38E /* GoogleService-Info.plist */,
+				EFAA627C1F5EB0BE0098F38E /* GoogleService-Info.plist */,
 				EF24622E1F5E646500092691 /* TestPush.entitlements */,
 				EF24621C1F5E643B00092691 /* AppDelegate.swift */,
 				EF24621E1F5E643B00092691 /* ViewController.swift */,
@@ -162,7 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF2462271F5E643B00092691 /* LaunchScreen.storyboard in Resources */,
-				EFAA627B1F5EA6510098F38E /* GoogleService-Info.plist in Resources */,
+				EFAA627D1F5EB0BE0098F38E /* GoogleService-Info.plist in Resources */,
 				EF2462241F5E643B00092691 /* Assets.xcassets in Resources */,
 				EF2462221F5E643B00092691 /* Main.storyboard in Resources */,
 			);
@@ -278,6 +278,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: apopt@hsin-yi.org.tw (7LWB9CZG5T)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -334,6 +335,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -363,7 +365,7 @@
 				CODE_SIGN_ENTITLEMENTS = TestPush/TestPush.entitlements;
 				DEVELOPMENT_TEAM = X8UN2F3AWB;
 				INFOPLIST_FILE = TestPush/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tw.org.hsin-yi.TestPush";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -379,7 +381,7 @@
 				CODE_SIGN_ENTITLEMENTS = TestPush/TestPush.entitlements;
 				DEVELOPMENT_TEAM = X8UN2F3AWB;
 				INFOPLIST_FILE = TestPush/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tw.org.hsin-yi.TestPush";
 				PRODUCT_NAME = "$(TARGET_NAME)";

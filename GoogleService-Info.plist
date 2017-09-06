@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>100071178305-gul13jjho39sv8kv2hm8o259gho3rcag.apps.googleusercontent.com</string>
+	<string>298667319719-u0i8h81uceu3q7t9rajrpftdti7c7v3m.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.100071178305-gul13jjho39sv8kv2hm8o259gho3rcag</string>
+	<string>com.googleusercontent.apps.298667319719-u0i8h81uceu3q7t9rajrpftdti7c7v3m</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBv-PU1Wr3kMdaepfHIfumJ1M7BZSyoti8</string>
+	<string>AIzaSyDywsO88TqFCHCEo9DaoV_5_97t-2UXonQ</string>
 	<key>GCM_SENDER_ID</key>
-	<string>100071178305</string>
+	<string>298667319719</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>tw.org.hsin-yi.TestPush</string>
 	<key>PROJECT_ID</key>
-	<string>fir-notification-demo-98ddd</string>
+	<string>testpush-b53f5</string>
 	<key>STORAGE_BUCKET</key>
-	<string>fir-notification-demo-98ddd.appspot.com</string>
+	<string>testpush-b53f5.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:100071178305:ios:520b7247384445e5</string>
+	<string>1:298667319719:ios:520b7247384445e5</string>
 	<key>DATABASE_URL</key>
-	<string>https://fir-notification-demo-98ddd.firebaseio.com</string>
+	<string>https://testpush-b53f5.firebaseio.com</string>
 </dict>
 </plist>
