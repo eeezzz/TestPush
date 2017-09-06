@@ -16,12 +16,12 @@ import FirebaseMessaging
 @UIApplicationMain
 
 // ,UNUserNotificationCenterDelegate, MessagingDelegate
-class AppDelegate: UIResponder, UIApplicationDelegate {
-    /*
+class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterDelegate, MessagingDelegate {
+    
     func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
-        print(fcmToken)
+        print("fcmToken: \(fcmToken)")
     }
-     */
+    
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         print("deviceToken: \(deviceToken)")
         let token = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
@@ -42,13 +42,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        /*
         let notificationTypes: UIUserNotificationType = [UIUserNotificationType.alert, UIUserNotificationType.badge, UIUserNotificationType.sound]
         let pushNotificationSettings = UIUserNotificationSettings(types: notificationTypes, categories: nil)
         
         application.registerUserNotificationSettings(pushNotificationSettings)
         application.registerForRemoteNotifications()
+        */
+        if #available(iOS 10.0, *) {
+            // For iOS 10 display notification (sent via APNS)
+            UNUserNotificationCenter.current().delegate = self
+            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+            UNUserNotificationCenter.current().requestAuthorization(
+                options: authOptions,
+                completionHandler: {_, _ in })
+            // For iOS 10 data message (sent via FCM）
+            Messaging.messaging().delegate = self
+        } else {
+            let settings: UIUserNotificationSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            application.registerUserNotificationSettings(settings)
+            
+        }
+        application.registerForRemoteNotifications()
+        FirebaseApp.configure()
         
-        return true
+        ）return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -79,6 +97,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let notificationSettings = UIUserNotificationSettings(
             types: [.badge, .sound, .alert], categories: nil)
         application.registerUserNotificationSettings(notificationSettings)
+    }
+    
+
+    // The callback to handle data message received via FCM for devices running iOS 10 or above.
+    func application(received remoteMessage: MessagingRemoteMessage) {
+        print(remoteMessage.appData)
     }
     
 
